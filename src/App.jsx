@@ -1,16 +1,7 @@
-import React from 'react'
-
-const App = () => {
+export default function App() {
   return (
-    <div>
-      <h1>Job Listings</h1>
-      <ul>
-        <li>Software Engineer</li>
-        <li>Product Manager</li>
-        <li>Data Scientist</li>
-      </ul>
-    </div>
-  )
+    <h1 className="text-4xl font-bold text-purple-600 underline">
+      Hello Tailwind v4 + Vite 🚀
+    </h1>
+  );
 }
-
-export default App
