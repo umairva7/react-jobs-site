@@ -13,7 +13,6 @@ const App = () => {
       <JobListings /> 
       <ViewAll />    
 
-      
     </div>
   )
 }
