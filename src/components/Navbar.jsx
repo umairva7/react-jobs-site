@@ -3,6 +3,12 @@ import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
 
 function Navbar() {
+
+  const LinkClass = ({ isActive }) =>
+    isActive
+      ? "flex items-center px-2 py-2 rounded-md text-white bg-gray-900"
+      : "flex items-center px-2 py-2 rounded-md text-white hover:bg-gray-900 hover:text-white";
+
   return (
     <nav className="bg-indigo-700 border-b border-indigo-500">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -21,31 +27,19 @@ function Navbar() {
               <div className="flex space-x-2">
                 <NavLink
                   to="/"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "flex items-center px-2 py-2 rounded-md text-white bg-gray-900"
-                      : "flex items-center px-2 py-2 rounded-md text-white hover:bg-gray-900 hover:text-white"
-                  }
+                  className={LinkClass}
                 >
                   Home
                 </NavLink>
                 <NavLink
                   to="/jobs"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "flex items-center px-2 py-2 rounded-md text-white bg-gray-900"
-                      : "flex items-center px-2 py-2 rounded-md text-white hover:bg-gray-900 hover:text-white"
-                  }
+                  className={LinkClass}
                 >
                   Jobs
                 </NavLink>
                 <NavLink
                   to="/add-job"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "flex items-center px-2 py-2 rounded-md text-white bg-gray-900"
-                      : "flex items-center px-2 py-2 rounded-md text-white hover:bg-gray-900 hover:text-white"
-                  }
+                  className={LinkClass}
                 >
                   Add Job
                 </NavLink>
