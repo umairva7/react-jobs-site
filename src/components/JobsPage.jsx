@@ -1,9 +1,17 @@
 import React from 'react'
+import JobList from './JobListings'
 
-function jobsPage() {
+function JobsPage() {
   return (
-    <div>jobsPage</div>
+    <div>
+    <section className='bg-blue-50 min-h-screen py-8'>
+      <JobList />
+
+      </section>
+    </div>
   )
 }
 
-export default jobsPage
+export default JobsPage
+
+

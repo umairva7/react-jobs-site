@@ -9,7 +9,7 @@ function HomePage() {
     <div>
         <Hero/>
         <Homecards/>
-        <JobListings/>
+        <JobListings isHome={true}/>
         <ViewAll/>
     </div>
   )
