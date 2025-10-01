@@ -1,11 +1,33 @@
-import React from 'react'
+import {useState,useEffect, use} from 'react'
 import jobs from '../jobs.json'
 import JobCard from './jobcards.jsx'
 
 
 
+
 function JobListings({isHome=false}) {
-  const jobList = isHome ? jobs.slice(0,3) : jobs;
+  const [jobList, setJobList] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate fetching data from an API
+    const fetchJobs = async () => {
+
+      try {
+        const response = await fetch('http://localhost:8000/jobs')
+        const data = await response.json()
+        setJobList(data.jobs)
+        
+      } catch (error) {
+        console.error('Error fetching jobs:', error)
+        
+      }
+      finally{
+        setLoading(false)
+      }
+    }
+    fetchJobs()
+  }, [])
 
   return (
     <div>
