@@ -1,5 +1,5 @@
 import React from 'react'
-import JobList from './JobListings'
+import JobList from '../components/JobListings'
 
 function JobsPage() {
   return (

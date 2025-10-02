@@ -1,7 +1,7 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
 import MainLayout from "./layouts/mainLayout.jsx";
 import HomePage from "./pages/HomePage.jsx";
-import JobsPage from "./components/jobsPage.jsx";
+import JobsPage from "./pages/JobsPage.jsx";
 import NotFoundPage from "./pages/NotFound.jsx";
 import JobPage from "./pages/JobPage.jsx";
 
