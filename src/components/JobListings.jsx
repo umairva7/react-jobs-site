@@ -1,26 +1,27 @@
 import { useState, useEffect } from "react";
-import JobCard from "./JobCard.jsx";
-import Spinner from "./Spinner.jsx";
+import JobCard from "./jobcards.jsx";
+import Spinner from "./spinner.jsx";
 
 function JobListings({ isHome = false }) {
   const [jobList, setJobList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate fetching data from an API
-    const fetchJobs = async () => {
-      try {
-        const response = await fetch("http://localhost:8000/jobs");
-        const data = await response.json();
-        setJobList(data.jobs);
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchJobs();
-  }, []);
+  const fetchJobs = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/jobs");
+      const data = await response.json();
+      console.log("Fetched jobs:", data); 
+      setJobList(data); 
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchJobs();
+}, []);
+
 
   return (
     <section className="bg-blue-50 px-4 py-10">
@@ -30,7 +31,7 @@ function JobListings({ isHome = false }) {
         </h2>
 
         {loading ? (
-          <Spinner loading={loading} />
+          <Spinner />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {jobList.map((job) => (

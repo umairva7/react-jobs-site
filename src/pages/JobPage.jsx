@@ -15,8 +15,9 @@ function JobPage() {
             setJob(data);
         };
         fetchJob();
+        
     }, []);
-  return loading ? <Spinner loading={loading} /> : (
+  return loading ? <Spinner /> : (
     <div className="container mx-auto p-4">
         {job ? (
             <div className="bg-white p-6 rounded-lg shadow-md">
