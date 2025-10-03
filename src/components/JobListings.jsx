@@ -8,8 +8,9 @@ function JobListings({ isHome = false }) {
 
   useEffect(() => {
   const fetchJobs = async () => {
+    const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
     try {
-      const response = await fetch("http://localhost:8000/jobs");
+      const response = await fetch(apiUrl);
       const data = await response.json();
       console.log("Fetched jobs:", data); 
       setJobList(data); 
@@ -34,6 +35,7 @@ function JobListings({ isHome = false }) {
           <Spinner />
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {}
             {jobList.map((job) => (
               <JobCard key={job.id} job={job} />
             ))}
